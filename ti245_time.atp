@@ -1,0 +1,45 @@
+/*
+;=================================================================
+;=                     74245 TIMING PATTERN                      =
+;=================================================================
+*/
+import tset time_fun, time_port;
+vm_vector
+ti245_time               ( $tset,    OE, DIR,   A1,A2,A3,A4,A5,A6,A7,A8, B1,B2,B3,B4,B5,B6,B7,B8    )
+{
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ; // Init device to known state (relaxed timing)
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;										 
+					                                                            
+					     > time_fun   1   1    0 0 0 0 0 0 0 0    M M M M M M M M ;
+                         > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+					     > time_fun   0   1    1 1 1 1 1 1 1 1    H H H H H H H H ;
+                         > time_fun   1   1    1 1 1 1 1 1 1 1    M M M M M M M M ;
+                         > time_fun   0   1    1 1 1 1 1 1 1 1    H H H H H H H H ;
+                         > time_fun   0   1    0 0 0 0 0 0 0 0    L L L L L L L L ;
+                                                                                
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ; // Change data direction (relaxed timing)
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+						 > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+										                                        
+                         > time_fun   1   0    M M M M M M M M    0 0 0 0 0 0 0 0 ;
+                         > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+                         > time_fun   0   0    H H H H H H H H    1 1 1 1 1 1 1 1 ;
+                         > time_fun   1   0    M M M M M M M M    1 1 1 1 1 1 1 1 ;
+                         > time_fun   0   0    H H H H H H H H    1 1 1 1 1 1 1 1 ;
+halt                     > time_fun   0   0    L L L L L L L L    0 0 0 0 0 0 0 0 ;
+}
